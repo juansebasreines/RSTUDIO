@@ -3,31 +3,31 @@
 ########################
 
 #####################################
-# pr醕tica 1: creando vectores en R #
+# pr谩ctica 1: creando vectores en R #
 #####################################
 
-# crear vector car醕ter con nombre de las pel韈ulas
+# crear vector car谩cter con nombre de las pel铆culas
 nombre_peliculas <- c("sherk","sherk 2", "sherk 3","sherk 4")
 
-# crear vector num閞ico con puntuaci髇 de las pel韈ulas
+# crear vector num茅rico con puntuaci贸n de las pel铆culas
 puntuacion <- c(6.2,7.5,9.1,4.1)
 puntuacion
 
-# crear vector l骻ico sobre si la pel韈ula es posterior a 2015
+# crear vector l贸gico sobre si la pel铆cula es posterior a 2015
 later_2005 <- c(FALSE, FALSE, TRUE, TRUE)
 
 ####################################################
-# pr醕tica 2: operaciones aritm閠icas con vectores #
+# pr谩ctica 2: operaciones aritm茅ticas con vectores #
 ####################################################
 
-# sumar 2 a la puntuaci髇
+# sumar 2 a la puntuaci贸n
 
 puntuacion_add_2 <- puntuacion+2
 
-# dividir la puntuaci髇 entre 2
+# dividir la puntuaci贸n entre 2
 puntuacion_divide_2 <- puntuacion/2
 
-# crea la puntuaci髇 de rafa
+# crea la puntuaci贸n de rafa
 puntuacion_juan <- c(5.2,9.1,6.3,4.2)
 
 # calcular diferencia entre puntuaciones
@@ -41,25 +41,25 @@ length(puntuacion)
 mean(puntuacion)
 
 ###################################################
-# pr醕tica 3: selecci髇 de elementos de un vector #
+# pr谩ctica 3: selecci贸n de elementos de un vector #
 ###################################################
 
-## selecci髇 basada en posici髇
-# seleccionar la tercera pel韈ula
+## selecci贸n basada en posici贸n
+# seleccionar la tercera pel铆cula
 puntuacion[3]
 nombre_peliculas[3]
-# seleccionar la primera y la 鷏tima pel韈ula
+# seleccionar la primera y la 煤ltima pel铆cula
 nombre_peliculas[c(1,4)]
 
-## selecci髇 basada en condici髇 l骻ica
-# crear condici髇 l骻ica
+## selecci贸n basada en condici贸n l贸gica
+# crear condici贸n l贸gica
 puntuacion_baja <- puntuacion < 7
 
-# mostrar condici髇 para ver TRUE/FALSE
+# mostrar condici贸n para ver TRUE/FALSE
 puntuacion_baja
 
 # mostrar puntuaciones bajas
 puntuacion[puntuacion_baja]
 
-# mostrar nombres de pel韈ulas con puntuaciones bajas
+# mostrar nombres de pel铆culas con puntuaciones bajas
 nombre_peliculas[puntuacion_baja]
