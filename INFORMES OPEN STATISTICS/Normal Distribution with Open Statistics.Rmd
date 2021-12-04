@@ -1,0 +1,88 @@
+---
+title: "Distribution Normal"
+author: "Juan Reines"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+head(fastfood)
+```
+
+### Filter of McDonalds and Dairy Queen
+
+```{r view-girls-counts}
+mcdonalds <- fastfood %>%
+  filter(restaurant == "Mcdonalds")
+
+dairy_queen <- fastfood %>%
+  filter(restaurant == "Dairy Queen")
+
+```
+
+
+### Graphic from Fat Calories
+
+Plots for show distribution about calories fat from restaurants
+
+```{r trend-girls}
+mcmean <- mean(mcdonalds$cal_fat)
+mcsd   <- sd(mcdonalds$cal_fat)
+ggplot(data = mcdonalds, aes(x = cal_fat)) +
+        geom_blank() +
+        geom_histogram(aes(y = ..density..)) +
+        stat_function(fun = dnorm, args = c(mean = mcmean, sd = mcsd), col = "tomato")
+```
+
+
+### Mean and Standard Desviation
+
+Calculate the mean and standard desviation
+
+```{r plot-prop-boys-arbuthnot}
+dqmean <- mean(dairy_queen$cal_fat)
+dqsd   <- sd(dairy_queen$cal_fat)
+```
+
+
+### Aproximate to Normal
+
+Graphic for look near to Normal distribution
+
+```{r dim-present}
+ggplot(data = dairy_queen, aes(x = cal_fat)) +
+        geom_blank() +
+        geom_histogram(aes(y = ..density..)) +
+        stat_function(fun = dnorm, args = c(mean = dqmean, sd = dqsd), col = "tomato")
+```
+
+
+### Graphic quartil-quartil
+
+We can see the quartil-quartil from Dairy Queen
+
+```{r count-compare}
+ggplot(data = dairy_queen, aes(sample = cal_fat)) + 
+  geom_line(stat = "qq")
+```
+
+
+### Near to Normal Distribution
+
+
+
+```{r plot-prop-boys-present}
+sim_norm <- rnorm(n = nrow(dairy_queen), mean = dqmean, sd = dqsd)
+```
+
+
+### Samples from Dairy Queen
+
+
+
+```{r find-max-total}
+qqnormsim(sample = cal_fat, data = dairy_queen)
+```
+
