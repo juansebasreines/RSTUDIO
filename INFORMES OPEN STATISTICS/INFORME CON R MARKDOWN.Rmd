@@ -1,0 +1,78 @@
+---
+title: "Lab 1: Intro to R"
+author: "John"
+date: "`r Sys.Date()`"
+output: openintro::lab_report
+---
+
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+### Exercise 1
+
+```{r view-girls-counts}
+arbuthnot$girls
+```
+
+
+### Exercise 2
+
+Graphic about girls of arbuthnot
+
+```{r trend-girls}
+ggplot(arbuthnot,aes(x = year,
+                     y = girls, 
+                     color = "rainbow"))+
+  geom_col()
+```
+
+
+### Exercise 3
+
+Graphic of boys on arbuthnot datas
+
+```{r plot-prop-boys-arbuthnot}
+plot(arbuthnot$year, arbuthnot$boys, xlab = "Years",
+     ylab = "amount of boys")
+```
+
+
+### Exercise 4
+
+Dimension about Present datas
+
+```{r dim-present}
+dim(present)
+```
+
+
+### Exercise 5
+
+Comparison of total boys and total girls
+
+```{r count-compare}
+sum(present$boys) > sum(present$girls)
+```
+
+
+### Exercise 6
+
+Graphic about presents of de boys on Present datas
+
+```{r plot-prop-boys-present}
+ggplot(present, aes(x = year,
+                    y = boys))+
+  geom_point()
+```
+
+
+### Exercise 7
+
+Maximum of the Present datas
+
+```{r find-max-total}
+max(present)
+```
+
