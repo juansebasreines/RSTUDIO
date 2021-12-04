@@ -2,7 +2,7 @@ install.packages("gapminder")
 library(gapminder)
 data("gapminder")#estos son datos demograficos de 
                   #diferentes paises a lo largo de
-                  #los años
+                  #los aÃ±os
 head(gapminder) #esto es para ver los datos
 
 install.packages("tidyverse") #para instalar el paquete de 
@@ -25,7 +25,7 @@ Mexico_gap <- gapminder %>% #esto es un pipe
 
 gapminder %>%   # esto sirve para filtrar 
                 #por continente de Asia y con el 
-                #año de 1952
+                #aÃ±o de 1952
   
   filter(continent == "Asia",
          year == 1952) %>%    #el pipe aqui funciona
@@ -45,7 +45,7 @@ max_life <- gapminder %>%
 ###########################  
 
 
-max_exp_vida_país <- gapminder %>% 
+max_exp_vida_paÃ­s <- gapminder %>% 
                     group_by(country) %>% 
                     summarise(Max_explife2 = max(lifeExp))
 
